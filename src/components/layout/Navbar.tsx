@@ -1,6 +1,12 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <header className="bg-white">
+    <header className="relative bg-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
         {/* Logo */}
         <div className="flex items-center gap-2">
@@ -43,14 +49,50 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu button */}
-        <button className="md:hidden text-neutral-700" aria-label="Menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>
+        <button
+          onClick={() => setOpen(!open)}
+          className="text-neutral-700 md:hidden"
+          aria-label="Toggle menu"
+        >
+          {open ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          ) : (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          )}
         </button>
       </div>
+
+      {/* Mobile dropdown */}
+      {open && (
+        <div className="border-t border-neutral-100 bg-white px-6 py-4 md:hidden">
+          <nav className="flex flex-col gap-4">
+            <a href="#" className="font-body text-label-m font-medium text-primary-600">
+              Home
+            </a>
+            <a href="#" className="font-body text-label-m font-medium text-neutral-600">
+              Courses
+            </a>
+            <a href="#" className="font-body text-label-m font-medium text-neutral-600">
+              Creators
+            </a>
+            <div className="mt-2 flex flex-col gap-3 border-t border-neutral-100 pt-4">
+              <a href="#" className="font-body text-label-m text-neutral-700">
+                Sign In
+              </a>
+              <a href="#" className="font-body text-label-m text-neutral-700">
+                Join Us
+              </a>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
