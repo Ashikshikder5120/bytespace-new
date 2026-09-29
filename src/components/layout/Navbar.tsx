@@ -33,10 +33,10 @@ export default function Navbar() {
 
         {/* Right actions */}
         <div className="hidden items-center gap-6 md:flex">
-          <a href="#" className="font-body text-label-m text-neutral-700">
+          <a href="/login" className="font-body text-label-m text-neutral-700">
             Sign In
           </a>
-          <a href="#" className="font-body text-label-m text-neutral-700">
+          <a href="/signup" className="font-body text-label-m text-neutral-700">
             Join Us
           </a>
           <button aria-label="Cart" className="text-neutral-700">
@@ -83,10 +83,10 @@ export default function Navbar() {
               Creators
             </a>
             <div className="mt-2 flex flex-col gap-3 border-t border-neutral-100 pt-4">
-              <a href="#" className="font-body text-label-m text-neutral-700">
+              <a href="/login" className="font-body text-label-m text-neutral-700">
                 Sign In
               </a>
-              <a href="#" className="font-body text-label-m text-neutral-700">
+              <a href="/signup" className="font-body text-label-m text-neutral-700">
                 Join Us
               </a>
             </div>

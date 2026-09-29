@@ -13,7 +13,7 @@ export default function CreateManage() {
         <div className="relative mx-auto max-w-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/hero-student.png"
+          src="/creator-student.png"
             alt="Course creator"
             className="w-full rounded-3xl"
           />
